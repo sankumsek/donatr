@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: donatr_development
+
+test:
+  adapter: postgresql
+  database: donatr_test
