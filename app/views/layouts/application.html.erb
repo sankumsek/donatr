@@ -12,7 +12,7 @@
     <nav>
         <ul class="nav nav-pills pull-right">
           <% if current_user %>
-            <li>Logged in as <%= current_user.email %></li>
+            <li><%= link_to user_path(current_user) do %><span class="glyphicon glyphicon-user"></span><%= current_user.name %><% end %></li>
             <li><%= link_to "Log Out", logout_path %></li>
           <% else %>
             <li><%= link_to "Sign Up", signup_path %></li>
