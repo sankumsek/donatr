@@ -1,8 +1,18 @@
-.signup, .login {
+.container {
+  max-width: 50em;
+}
+
+.new {
   width: 20em;
   margin: 0 auto;
 }
 
 .jumbotron {
   text-align: center;
+}
+
+ul.causes {
+  list-style: none;
+  li {
+  }
 }

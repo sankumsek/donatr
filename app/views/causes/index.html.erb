@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-7">
+    <h1>Causes</h1>
+    <p>Here are all the causes you can donate to:</p>
+
+    <ul class="causes">
+      <% @causes.each do |cause| %>
+        <li><h3><%= link_to cause.name, cause_path(cause.id) %></h3></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-sm-5">
+    <h2>Got causes?</h2>
+    <p>Add a new one!</p>
+    <%= link_to "New Cause", new_cause_path, class: "btn btn-primary" %>
+  </div>
+</div>
