@@ -12,6 +12,6 @@ private
   helper_method :current_user
 
   def authorize
-    redirect_to login_url, alert: "Log in to view this page" if current_user.nil?
+    redirect_to login_url, alert: "You must be logged in!" if current_user.nil?
   end
 end
