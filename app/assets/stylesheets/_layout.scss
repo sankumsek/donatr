@@ -12,10 +12,15 @@
 }
 
 ul.admin {
+  padding: 0;
   text-align: left;
   list-style: none;
   li {
     float: left;
-    padding: 0 1em;
+    padding: 0 1em 0 0;
   }
+}
+
+p.description {
+  padding-bottom: 1em;
 }

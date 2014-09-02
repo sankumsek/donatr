@@ -1,35 +1,28 @@
 <div class="row">
-  <div class="col-md-8 cause">
-    <h1><%= @cause.name %></h1>
-    <p><%= @cause.description %></p>
+  <div class="col-md-8">
+  <h1><%= @user.name %></h1>
     <ul class="admin">
-      <li><%= link_to edit_cause_path do %><span class="glyphicon glyphicon-pencil"></span>Edit<% end %></li>
-      <li><%= link_to cause_path(@cause),
-                           :data => {:confirm => "You sure?",
-                                     :method => "delete"} do %><span class="glyphicon glyphicon-trash"></span>Delete<% end %></li>
+      <li><%= link_to edit_user_path do %><span class="glyphicon glyphicon-pencil"></span>Edit Profile<% end %></li>
+      <li><%= link_to user_path(@user),
+                           :data => {:confirm => "Delete profile?",
+                                     :method => "delete"} do %><span class="glyphicon glyphicon-trash"></span>Delete Profile<% end %></li>
     </ul>
-  </div>
-
-  <div class="col-md-4">
-    <h2>Total Donated:</h2>
-    <p><%= number_to_currency @total %></p>
-    <%= link_to "Donate!", new_cause_donation_path(@cause), class: "btn btn-primary btn-block" %>
   </div>
 </div>
 
 <div class="donations">
-  <h2>Supporters</h2>
+  <h2>Supported Causes</h2>
   <table class="table">
     <thead>
       <tr>
-        <th>Donator</th>
+        <th>Cause</th>
         <th>Amount</th>
       </tr>
     </thead>
     <tbody>
-    <% @cause.donations.each do |donation| %>
+    <% @user.donations.each do |donation| %>
       <tr>
-        <td><%= link_to "#{User.find(donation.user_id).name}", user_path(User.find(donation.user_id)) %></td>
+        <td><%= link_to "#{Cause.find(donation.cause_id).name}", cause_path(Cause.find(donation.cause_id)) %></td>
         <td><%= number_to_currency donation.amount %></td>
       </tr>
     <% end %>

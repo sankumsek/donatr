@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-8 cause">
     <h1><%= @cause.name %></h1>
-    <p><%= @cause.description %></p>
+    <p class="description"><%= @cause.description %></p>
     <ul class="admin">
-      <li><%= link_to edit_cause_path do %><span class="glyphicon glyphicon-pencil"></span>Edit<% end %></li>
+      <li><%= link_to edit_cause_path do %><span class="glyphicon glyphicon-pencil"></span>Edit Cause<% end %></li>
       <li><%= link_to cause_path(@cause),
                            :data => {:confirm => "You sure?",
-                                     :method => "delete"} do %><span class="glyphicon glyphicon-trash"></span>Delete<% end %></li>
+                                     :method => "delete"} do %><span class="glyphicon glyphicon-trash"></span>Delete Cause<% end %></li>
     </ul>
   </div>
 
@@ -29,7 +29,7 @@
     <tbody>
     <% @cause.donations.each do |donation| %>
       <tr>
-        <td><%= link_to "#{User.find(donation.user_id).email}", user_path(User.find(donation.user_id)) %></td>
+        <td><%= link_to "#{User.find(donation.user_id).name}", user_path(User.find(donation.user_id)) %></td>
         <td><%= number_to_currency donation.amount %></td>
       </tr>
     <% end %>
