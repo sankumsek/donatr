@@ -20,6 +20,7 @@ class CausesController < ApplicationController
 
   def show
     @cause = Cause.find(params[:id])
+    @total = Donation.total(@cause)
   end
 
   def edit
