@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create, :destroy]
   resources :causes do
-    resources :donations
+    resources :donations, only: [:new, :create]
   end
 end
