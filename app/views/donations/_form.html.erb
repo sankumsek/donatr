@@ -1,0 +1,10 @@
+<%= form_for [@cause, @donation], html: {class: "form"} do |f| %>
+  <%= render 'layouts/errors', :object => @donation %>
+
+  <div class="form-group">
+    <%= f.label :amount %>
+    <%= f.number_field :amount, class: "form-control", placeholder: "$10" %>
+  </div>
+
+  <%= f.submit "Donate", class: "btn btn-primary btn-block" %>
+<% end %>

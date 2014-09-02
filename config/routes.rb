@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :causes
+  resources :causes do
+    resources :donations
+  end
 end

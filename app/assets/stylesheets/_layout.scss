@@ -11,13 +11,11 @@
   text-align: center;
 }
 
-ul.causes, ul.admin {
+ul.admin {
+  text-align: left;
   list-style: none;
   li {
-    padding: .5em 0;
+    float: left;
+    padding: 0 1em;
   }
-}
-
-.admin {
-  text-align: right;
 }
