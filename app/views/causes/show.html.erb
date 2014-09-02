@@ -1,0 +1,18 @@
+<div class="col-md-8">
+  <h1><%= @cause.name %></h1>
+
+  <p><%= @cause.description %></p>
+
+  <%= link_to "Donate!", causes_path, class: "btn btn-primary" %>
+</div>
+
+<div class="col-md-4 admin panel panel-info">
+  <div class="panel-body">
+    <ul class="admin">
+      <li><%= link_to edit_cause_path do %>Edit<span class="glyphicon glyphicon-pencil"></span><% end %></li>
+      <li><%= link_to cause_path(@cause),
+                           :data => {:confirm => "You sure?",
+                                     :method => "delete"} do %>Delete<span class="glyphicon glyphicon-trash"></span><% end %></li>
+    </ul>
+  </div>
+</div>
